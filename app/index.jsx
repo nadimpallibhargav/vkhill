@@ -7,7 +7,7 @@ export default function App() {
     <View className="flex-1 items-center justify-center bg-white">
       <Text className="font-pblack text-3xl text-black text-center pb-20">Welcome to VK Hill Security App !</Text>
       <StatusBar style="auto" />
-      <Link href='/login' className='text-base text-white font-semibold bg-black px-10 py-4 rounded-md'>Login</Link>
+      <Link href='/home' className='text-base text-white font-semibold bg-black px-10 py-4 rounded-md'>Sign in</Link>
     </View>
   );
 }
