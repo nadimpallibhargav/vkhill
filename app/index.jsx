@@ -1,13 +1,30 @@
-import { Text, View } from 'react-native';
-import { Link } from 'expo-router';
+import { Image, ScrollView, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { images } from '../constants';
+import CustomButton from '../components/CustomButton';
 import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text className="font-pblack text-3xl text-black text-center pb-20">Welcome to VK Hill Security App !</Text>
-      <StatusBar style="auto" />
-      <Link href='/home' className='text-base text-white font-semibold bg-black px-10 py-4 rounded-md'>Sign in</Link>
-    </View>
+    <SafeAreaView className='bg-primary h-full'>
+      <ScrollView contentContainerStyle={{ height: '100%' }}>
+        <View className="w-full items-center justify-center h-full px-4">
+          <Image source={images.logo} className='w-[130px] h-[84px]' resizeMode='contain' />          
+          <View className='pb-7'>
+            <Text className="text-3xl text-white font-bold pt-7 text-center">Welcome Message goes here! {' '}
+              <Text className='text-secondary-200'>Title</Text>
+            </Text>
+          </View>
+          <Text className='text-sm font-pregular text-gray-100 text-center pb-7'>Sub heading text goes here</Text>
+          <CustomButton 
+            title='Continue with Email' 
+            containerStyles='w-full'
+            handlePress={() => {}}
+          />
+        </View>        
+      </ScrollView>
+      <StatusBar backgroundColor='#161622' style='light' />
+    </SafeAreaView>
   );
 }
+
