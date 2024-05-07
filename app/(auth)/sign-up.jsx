@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { View, Text, ScrollView, Alert } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { Link } from 'expo-router'
+import { Link, router } from 'expo-router'
 
 import FormField from '../../components/FormField'
 import CustomButton from '../../components/CustomButton'
