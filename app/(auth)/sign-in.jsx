@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { View, Text, ScrollView } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { Link } from 'expo-router'
+import { Link, router } from 'expo-router'
 
 import FormField from '../../components/FormField'
 import CustomButton from '../../components/CustomButton'
@@ -43,7 +43,7 @@ const SignIn = () => {
 
           <CustomButton 
             title='Sign In'
-            handlePress={submit}
+            handlePress={() => router.push('/home')}
             isLoading={isSubmitting}
           />
 
