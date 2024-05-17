@@ -39,17 +39,20 @@ const UserMap = () => {
 
   return (
     <MapView
-      style={styles.map}
-      initialRegion={{
-        latitude: 12.890315879569556, 
-        longitude: 77.54887665823543,
-        latitudeDelta: 0.005,
-        longitudeDelta: 0.005,
-      }}
+        style={styles.map}
+        initialRegion={{
+            latitude: 12.890315879569556, 
+            longitude: 77.54887665823543,
+            latitudeDelta: 0.005,
+            longitudeDelta: 0.005,
+        }}
+        showsUserLocation={true}
+        followsUserLocation={true}
+        showsMyLocationButton={true}
     >
       <Polyline
         coordinates={coordinates}
-        strokeColor="#000"
+        strokeColor="#FF9C01"
         strokeWidth={6}
       />
     </MapView>
