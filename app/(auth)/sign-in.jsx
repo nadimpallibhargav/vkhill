@@ -3,20 +3,14 @@ import { View, Text, ScrollView } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Link, router } from 'expo-router'
 
-import FormField from '../../components/FormField'
-import CustomButton from '../../components/CustomButton'
+import FormField from '../../components/atoms/FormField/FormField'
+import CustomButton from '../../components/atoms/CustomButton/CustomButton'
 
 const SignIn = () => {
   const[form, setForm] = useState({
     email: '',
     password: ''
   })
-
-  const[isSubmitting, setIsSubmitting] = useState(false)
-
-  const submit = () => {
-
-  }
 
   return (
     <SafeAreaView className='bg-primary h-full'>
@@ -43,8 +37,7 @@ const SignIn = () => {
 
           <CustomButton 
             title='Sign In'
-            handlePress={() => router.push('/home')}
-            isLoading={isSubmitting}
+            handlePress={() => router.push('/home')}            
           />
 
           <View className='flex-row justify-center items-center gap-2 pt-5'>

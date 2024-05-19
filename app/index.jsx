@@ -1,9 +1,10 @@
 import { Image, ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
-import { Redirect, router } from 'expo-router';
-import CustomButton from '../components/CustomButton';
+import { router } from 'expo-router';
+
 import { images } from '../constants';
+import CustomButton from '../components/atoms/CustomButton/CustomButton';
 
 export default function App() {
   return (
