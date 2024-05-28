@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { View, Text, ScrollView } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { Link } from 'expo-router'
+import { Link, router } from 'expo-router'
 
 import FormField from '../../components/atoms/FormField/FormField'
 import CustomButton from '../../components/atoms/CustomButton/CustomButton'
@@ -45,8 +45,7 @@ const SignUp = () => {
 
           <CustomButton 
             title='Sign Up'
-            handlePress={submit}
-            isLoading={()=>{}}            
+            handlePress={() => router.push('/sign-in')}
           />
 
           <View className='flex-row justify-center items-center gap-2 pt-5'>
