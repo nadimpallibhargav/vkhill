@@ -1,12 +1,10 @@
 import { useState } from 'react'
-import { View, Text, ScrollView, Alert } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
+import { View, Text, ScrollView } from 'react-native'
 import { Link, router } from 'expo-router'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 import FormField from '../../components/atoms/FormField/FormField'
 import CustomButton from '../../components/atoms/CustomButton/CustomButton'
-
-import { createUser } from '../../lib/appwrite'
 
 const SignUp = () => {
   const[form, setForm] = useState({
@@ -14,26 +12,6 @@ const SignUp = () => {
     email: '',
     password: ''
   })
-
-  const[isSubmitting, setIsSubmitting] = useState(false)
-
-  const submit = async () => {
-    if(!form.username || !form.email || !form.password) {
-      Alert.alert('Error', 'Please fill in all the fields')
-    }
-
-    setIsSubmitting(true)
-
-    try {
-      const result = await createUser(form.email, form.password, form.username)
-
-      router.replace('/home')
-    } catch (error) {
-      Alert.alert('Error here', error.message)
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
 
   return (
     <SafeAreaView className='bg-primary h-full'>
@@ -67,8 +45,7 @@ const SignUp = () => {
 
           <CustomButton 
             title='Sign Up'
-            handlePress={submit}
-            isLoading={isSubmitting}            
+            handlePress={() => router.push('/sign-in')}
           />
 
           <View className='flex-row justify-center items-center gap-2 pt-5'>
