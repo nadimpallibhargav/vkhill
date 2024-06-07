@@ -19,9 +19,14 @@ export default function App() {
           </View>
           <Text className='text-sm font-pregular text-gray-100 text-center pb-7'>Guardians of Sacred Space</Text>
           <CustomButton 
-            title='Continue with Email' 
-            containerStyles='w-full'
+            title='Sign In'
+            containerStyles='w-full mb-5'
             handlePress={() => router.push('/sign-in')}
+          />
+          <CustomButton 
+            title='Generate QR Code' 
+            containerStyles='w-full'
+            handlePress={() => router.push('/generate-qr-code')}
           />
         </View>        
       </ScrollView>
