@@ -1,25 +1,8 @@
-import { Image, Text, View } from "react-native";
+import React from 'react';
 import { Tabs } from 'expo-router';
-import { icons } from "../../constants";
 
-const TabIcon = ({ icon, color, name, focused }) => {
-  return (
-    <View className="flex items-center justify-center gap-2">
-      <Image
-        source={icon}
-        resizeMode="contain"
-        tintColor={color}
-        className="w-6 h-6"
-      />
-      <Text
-        className={`${focused ? "font-psemibold" : "font-pregular"} text-xs`}
-        style={{ color: color }}
-      >
-        {name}
-      </Text>
-    </View>
-  );
-};
+import TabIcon from '../../components/atoms/TabIcon/TabIcon';
+import { icons } from "../../constants";
 
 const TabLayout = () => {
 
@@ -37,22 +20,7 @@ const TabLayout = () => {
             height: 84,
           },
         }}
-      >
-        <Tabs.Screen
-          name="home"
-          options={{
-            title: "Home",
-            headerShown: false,
-            tabBarIcon: ({ color, focused }) => (
-              <TabIcon
-                icon={icons.home}
-                color={color}
-                name="Home"
-                focused={focused}
-              />
-            ),
-          }}
-        />
+      >        
         <Tabs.Screen
           name="activity"
           options={{
@@ -68,6 +36,7 @@ const TabLayout = () => {
             ),
           }}
         />
+
         <Tabs.Screen
           name="profile"
           options={{
@@ -78,6 +47,22 @@ const TabLayout = () => {
                 icon={icons.profile}
                 color={color}
                 name="Profile"
+                focused={focused}
+              />
+            ),
+          }}
+        />
+
+        <Tabs.Screen
+          name="generate-qr-code"
+          options={{
+            title: "GenerateQRCode",
+            headerShown: false,
+            tabBarIcon: ({ color, focused }) => (
+              <TabIcon
+                icon={icons.home}
+                color={color}
+                name="New Code"
                 focused={focused}
               />
             ),

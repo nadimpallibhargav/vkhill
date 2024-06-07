@@ -19,9 +19,9 @@ export default function App() {
           </View>
           <Text className='text-sm font-pregular text-gray-100 text-center pb-7'>Guardians of Sacred Space</Text>
           <CustomButton 
-            title='Sign In'
+            title='Scan Code'
             containerStyles='w-full mb-5'
-            handlePress={() => router.push('/sign-in')}
+            handlePress={() => router.push('/profile')}
           />
           <CustomButton 
             title='Generate QR Code' 

@@ -2,9 +2,9 @@ import { View, ScrollView } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { StatusBar } from 'expo-status-bar';
 
-import UserMap from '../../components/molecules/UserMap/UserMap';
+import UserMap from '../../molecules/UserMap/UserMap';
 
-const Home = () => {
+const UserLocation = () => {
   return (
     <SafeAreaView className='bg-primary h-full'>
       <ScrollView contentContainerStyle={{ height: '100%' }}>
@@ -17,4 +17,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default UserLocation
