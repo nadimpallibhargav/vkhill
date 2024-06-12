@@ -38,15 +38,15 @@ const TabLayout = () => {
         />
 
         <Tabs.Screen
-          name="profile"
+          name="scan-qr-code"
           options={{
-            title: "Profile",
+            title: "ScanQRCode",
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <TabIcon
                 icon={icons.profile}
                 color={color}
-                name="Profile"
+                name="Scan"
                 focused={focused}
               />
             ),

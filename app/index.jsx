@@ -21,7 +21,7 @@ export default function App() {
           <CustomButton 
             title='Scan Code'
             containerStyles='w-full mb-5'
-            handlePress={() => router.push('/profile')}
+            handlePress={() => router.push('/scan-qr-code')}
           />
           <CustomButton 
             title='Generate QR Code' 
