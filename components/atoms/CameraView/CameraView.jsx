@@ -4,7 +4,7 @@ import { CameraView } from 'expo-camera';
 const CustomCameraView = ({ onBarcodeScanned, ...props }) => {
   return (
     <CameraView
-      style={{ flex: 1 }}
+      className="flex-1"
       facing="back"
       barcodeScannerSettings={{
         barcodeTypes: ['qr'],

@@ -15,8 +15,8 @@ export default function ScanQRCode() {
   if (!permission.granted) {
     // Camera permissions are not granted yet.
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text style={{ textAlign: 'center' }}>We need your permission to show the camera</Text>
+      <View className="flex-1 justify-center items-center">
+        <Text className="text-center">We need your permission to show the camera</Text>
         <Button onPress={requestPermission} title="Grant Permission" />
       </View>
     );
@@ -32,7 +32,7 @@ export default function ScanQRCode() {
   };
 
   return (
-    <View style={{ flex: 1 }}>
+    <View className="flex-1">
       <CustomCameraView onBarcodeScanned={handleBarcodeScanned} />
     </View>
   );
