@@ -1,9 +1,11 @@
-import React from 'react';
-import { CameraView, useCameraPermissions } from 'expo-camera';
-import { Button, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { Alert, Button, Text, View } from 'react-native';
+import { useCameraPermissions } from 'expo-camera';
+import CustomCameraView from '../../components/atoms/CameraView/CameraView';
 
 export default function ScanQRCode() {
   const [permission, requestPermission] = useCameraPermissions();
+  const [scanned, setScanned] = useState(false);
 
   if (!permission) {
     // Camera permissions are still loading.
@@ -13,16 +15,25 @@ export default function ScanQRCode() {
   if (!permission.granted) {
     // Camera permissions are not granted yet.
     return (
-      <View className="flex-1 justify-center">
-        <Text className="text-center">We need your permission to show the camera</Text>
-        <Button onPress={requestPermission} title="grant permission" />
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text style={{ textAlign: 'center' }}>We need your permission to show the camera</Text>
+        <Button onPress={requestPermission} title="Grant Permission" />
       </View>
     );
   }
 
+  const handleBarcodeScanned = ({ data }) => {
+    if (!scanned) {
+      setScanned(true);      
+      Alert.alert('Scanned Successfully!', data, [
+        { text: 'OK', onPress: () => setScanned(false) }
+      ]);
+    }
+  };
+
   return (
-    <View className="flex-1 justify-center">
-      <CameraView className="flex-1" facing="back" />
+    <View style={{ flex: 1 }}>
+      <CustomCameraView onBarcodeScanned={handleBarcodeScanned} />
     </View>
   );
 }
